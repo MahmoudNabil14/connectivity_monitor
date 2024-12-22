@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  ConnectivityService.validateInternetConnection();
+
+  ConnectivityService.startConnectionNotifier();
+
+  ///To start the listener without toasts
+  // ConnectivityService.startConnectionNotifier(showToasts: false);
 
   runApp(const MyApp());
 }

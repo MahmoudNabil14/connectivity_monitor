@@ -29,6 +29,7 @@ Then run:
 flutter pub get
 ```
 ---
+
 ## Important Note
 
 To use the `ConnectivityMonitor` widget effectively, the `ConnectivityService.startConnectionNotifier` must be called first to initialize the global connectivity listener. This ensures that the connectivity events are properly monitored and can be utilized by the `ConnectivityMonitor` widget or any custom logic you implement.
@@ -40,6 +41,7 @@ You can use `ConnectivityMonitor` to adapt your UI based on connectivity changes
 ### 1. Start Global Monitoring with `ConnectivityService`
 
 Start monitoring network connectivity in your app's `main` function:
+
 **Note:** Ensure that `WidgetsFlutterBinding.ensureInitialized();` is called before starting the connectivity service.
 
 ```dart
@@ -83,6 +85,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 ```
+
 ### 2. Use `ConnectivityMonitor` Widget
 
 Wrap your app's widgets or pages with the `ConnectivityMonitor` widget to display custom UI or messages when the user is offline:
@@ -126,10 +129,21 @@ class HomeScreen extends StatelessWidget {
   }
 }
 ```
+
+#### Connectivity Monitor Widget
+
+*   `child` (required): The main widget to display when connected.
+*   `customDisconnectedWidget`: Custom widget to display when the device is disconnected. (default: `null`)
+*   `requiresConnection`: Whether a connection is required to display the `child`. (default: `true`)
+*   `useDialogAsConnectivityIndicator`: Whether to show a dialog as the connectivity indicator. (default: `true`)
+*   `useWidgetAsConnectivityIndicator`: Whether to use a custom widget for the connectivity indicator. (default: `false`)
+*   `onDisconnected`: Callback function triggered when the device disconnects. (default: `null`)
+*   `onConnected`: Callback function triggered when the device connects. (default: `null`)
+*   `customDialog`: Custom dialog widget for the disconnected state. (default: `null`)
+
 ---
 
-## Customization
--------------
+## How to Work with ConnectivityService
 
 ### Connectivity Service Options
 
@@ -216,8 +230,9 @@ void main() {
 
   runApp(MyApp());
 }
-
 ```
+
+---
 
 #### **`stopNotifier()`**
 
@@ -272,26 +287,15 @@ Future<void> checkConnection() async {
     print('No active internet connection');
   }
 }
-
 ```
 
-### Connectivity Monitor Widget
-
-*   `child` (required): The main widget to display when connected.
-*   `customDisconnectedWidget`: Custom widget to display when the device is disconnected. (default: `null`)
-*   `requiresConnection`: Whether a connection is required to display the `child`. (default: `true`)
-*   `useDialogAsConnectivityIndicator`: Whether to show a dialog as the connectivity indicator. (default: `true`)
-*   `useWidgetAsConnectivityIndicator`: Whether to use a custom widget for the connectivity indicator. (default: `false`)
-*   `onDisconnected`: Callback function triggered when the device disconnects. (default: `null`)
-*   `onConnected`: Callback function triggered when the device connects. (default: `null`)
-*   `customDialog`: Custom dialog widget for the disconnected state. (default: `null`)
 ---
+
 
 ## Contributions
--------------
 
 Contributions are welcome! Please feel free to submit issues or pull requests to improve this package.
----
+
 
 
 
