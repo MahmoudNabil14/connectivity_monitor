@@ -134,11 +134,9 @@ class HomeScreen extends StatelessWidget {
 
 *   `child` (required): The main widget to display when connected.
 *   `customDisconnectedWidget`: Custom widget to display when the device is disconnected. (default: `null`)
-*   `requiresConnection`: Whether a connection is required to display the `child`. (default: `true`)
+*   `requiresConnection`: If true, ensures that the `child` widget is displayed only when the device is connected to the internet. (default: `true`)
 *   `useDialogAsConnectivityIndicator`: Whether to show a dialog as the connectivity indicator. (default: `true`)
 *   `useWidgetAsConnectivityIndicator`: Whether to use a custom widget for the connectivity indicator. (default: `false`)
-*   `onDisconnected`: Callback function triggered when the device disconnects. (default: `null`)
-*   `onConnected`: Callback function triggered when the device connects. (default: `null`)
 *   `customDialog`: Custom dialog widget for the disconnected state. (default: `null`)
 
 ---
