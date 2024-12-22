@@ -6,8 +6,7 @@ homepage: "https://github.com/MahmoudNabil14/connectivity_monitor"
 environment:
   sdk: ^3.6.0
   flutter: ">=1.17.0"
-authors:
-  - Mahmoud mahmoudnabil141981@gmail.com
+
 dependencies:
   flutter:
     sdk: flutter

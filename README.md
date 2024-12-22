@@ -44,7 +44,7 @@ Start monitoring network connectivity in your app's `main` function:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:connectivity_monitor/connectivity_monitor_package.dart';
+import 'package:connectivity_monitor/connectivity_monitor.dart';
 
 void main() {
   // Ensure bindings are initialized before starting the connectivity service
@@ -89,7 +89,7 @@ Wrap your app's widgets or pages with the `ConnectivityMonitor` widget to displa
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:connectivity_monitor/connectivity_monitor_package.dart';
+import 'package:connectivity_monitor/connectivity_monitor.dart';
 
 class MyApp extends StatelessWidget {
   @override

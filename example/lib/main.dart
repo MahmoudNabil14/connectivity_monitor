@@ -1,4 +1,4 @@
-import 'package:connectivity_monitor/connectivity_monitor_package.dart';
+import 'package:connectivity_monitor/connectivity_monitor.dart';
 import 'package:flutter/material.dart';
 
 void main() {

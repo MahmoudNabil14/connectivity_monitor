@@ -1,3 +1,3 @@
-// lib/connectivity_monitor_package.dart
+// lib/connectivity_monitor.dart
 export 'src/connectivity_service.dart';
 export 'src/connectivity_monitor.dart';
