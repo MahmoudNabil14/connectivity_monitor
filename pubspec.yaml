@@ -4,7 +4,7 @@ version: 1.0.4
 homepage: "https://github.com/MahmoudNabil14/connectivity_monitor"
 
 environment:
-  sdk: ">=3.6.0"
+  sdk: "3.6.0"
   flutter: ">=3.27.1"
 
 dependencies:
