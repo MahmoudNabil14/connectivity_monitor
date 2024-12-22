@@ -1,16 +1,21 @@
 import 'dart:async';
 import 'package:connectivity_monitor/src/connectivity_service.dart';
 import 'package:flutter/material.dart';
+
 /// ConnectivityMonitor is a widget that adapts its UI based on network status.
 ///
 /// This widget listens to network changes via `ConnectivityService`
 /// and provides customizable options for disconnected states.
 class ConnectivityMonitor extends StatefulWidget {
   final Widget child; // The main widget to display when connected.
-  final Widget? customDisconnectedWidget; // Custom widget for disconnected state.
-  final bool requiresConnection; // Whether a connection is required to display the child.
-  final bool useDialogAsConnectivityIndicator; // Use a dialog for connectivity indicator.
-  final bool useWidgetAsConnectivityIndicator; // Use a custom widget for connectivity indicator.
+  final Widget?
+      customDisconnectedWidget; // Custom widget for disconnected state.
+  final bool
+      requiresConnection; // Whether a connection is required to display the child.
+  final bool
+      useDialogAsConnectivityIndicator; // Use a dialog for connectivity indicator.
+  final bool
+      useWidgetAsConnectivityIndicator; // Use a custom widget for connectivity indicator.
   final Function? onDisconnected; // Callback when disconnected.
   final Function? onConnected; // Callback when connected.
   final Widget? customDialog; // Custom dialog for disconnected state.
@@ -24,7 +29,6 @@ class ConnectivityMonitor extends StatefulWidget {
     this.customDisconnectedWidget,
     this.onConnected,
     this.onDisconnected,
-
     this.customDialog,
   });
 
@@ -50,16 +54,16 @@ class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
   }
 
   void _initializeConnectivity() {
-    if(widget.requiresConnection) {
+    if (widget.requiresConnection) {
       _connectivitySubscription = ConnectivityService.connectivityStream.listen(
-          (bool isConnected) {
-        if (isConnected) {
-          _handleWhenConnected();
-        } else {
-          _handleWhenDisconnected();
-        }
-      },
-    );
+        (bool isConnected) {
+          if (isConnected) {
+            _handleWhenConnected();
+          } else {
+            _handleWhenDisconnected();
+          }
+        },
+      );
     }
   }
 
@@ -104,7 +108,8 @@ class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
                 borderRadius: BorderRadius.circular(12.0),
               ),
               backgroundColor: Colors.white,
-              contentPadding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 24.0),
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 24.0),
               title: Row(
                 children: [
                   Icon(
@@ -169,20 +174,19 @@ class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
                       color: Colors.black54,
                     ),
                   ),
-
                 ],
               ),
             ),
           ),
         );
-
   }
 
   @override
   Widget build(BuildContext context) {
-    if (widget.requiresConnection && !_isConnected && widget.useWidgetAsConnectivityIndicator) {
-        return _buildDisconnectedWidget();
-
+    if (widget.requiresConnection &&
+        !_isConnected &&
+        widget.useWidgetAsConnectivityIndicator) {
+      return _buildDisconnectedWidget();
     }
     return widget.child;
   }
