@@ -19,4 +19,4 @@ The first version of the `connectivity_monitor` package introduces essential too
 * **Cross-Platform Support**:
     * Works seamlessly on Android, iOS.
 
-This release provides a robust foundation for handling connectivity in Flutter applications with ease and flexibility. Feedback and contributions are welcome!
+This release provides a robust foundation for handling connectivity in Flutter applications with ease and flexibility. Feedback and contributions are welcome! 
