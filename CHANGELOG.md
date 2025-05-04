@@ -1,3 +1,10 @@
+[1.0.5]
+Changes:
+Expanded Dart SDK compatibility:
+Updated Dart SDK constraint to ">=3.6.0 <4.0.0" to support newer versions, including Dart 3.7.x.
+
+No functional changes; safe for upgrade from 1.0.4.
+
 ## [1.0.4]
 
 ### Requirements:

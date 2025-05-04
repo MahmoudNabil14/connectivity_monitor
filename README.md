@@ -21,7 +21,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  connectivity_monitor: ^1.0.0
+  connectivity_monitor: ^1.0.5
 ```
 
 Then run:
@@ -175,16 +175,16 @@ The `startConnectionNotifier` method initializes global connectivity monitoring 
 - **`testUrl`** *(String, default: "https://google.com")*:  
   The URL used to validate actual internet access.
 
-- **`connectedBackgroundColor`** *(Color, default: `Colors.green`)*:  
+- **`connectedToastBackgroundColor`** *(Color, default: `Colors.green`)*:  
   The background color of the toast message when connected.
 
-- **`disconnectedBackgroundColor`** *(Color, default: `Colors.red`)*:  
+- **`disconnectedToastBackgroundColor`** *(Color, default: `Colors.red`)*:  
   The background color of the toast message when disconnected.
 
-- **`connectedWebBackgroundHexColor`** *(String, default: `"#4CAF50"`)*:  
+- **`connectedWebToastBackgroundHexColor`** *(String, default: `"#4CAF50"`)*:  
   The background color (in hex) for web toasts when connected.
 
-- **`disconnectedWebBackgroundHexColor`** *(String, default: `"#F44336"`)*:  
+- **`disconnectedWebToastBackgroundHexColor`** *(String, default: `"#F44336"`)*:  
   The background color (in hex) for web toasts when disconnected.
 
 - **`toastGravity`** *(ToastGravity, default: `ToastGravity.BOTTOM`)*:  

@@ -30,8 +30,8 @@ class ConnectivityService {
   /// [connectedToastMessage] - Message displayed when connected.
   /// [disconnectedToastMessage] - Message displayed when disconnected.
   /// [testUrl] - URL used to validate internet access (default: `https://google.com`).
-  /// [connectedBackgroundColor] - Background color for the connected toast.
-  /// [disconnectedBackgroundColor] - Background color for the disconnected toast.
+  /// [connectedToastBackgroundColor] - Background color for the connected toast.
+  /// [disconnectedToastBackgroundColor] - Background color for the disconnected toast.
   /// [toastGravity] - Position of the toast on the screen.
   /// [toastFontSize] - Font size for the toast message.
   /// [showToasts] - Whether to show toast notifications (default: `true`).
@@ -41,10 +41,10 @@ class ConnectivityService {
     String disconnectedToastMessage =
         "No internet connection. Please check your network.",
     String testUrl = 'https://google.com',
-    Color connectedBackgroundColor = Colors.green,
-    Color disconnectedBackgroundColor = Colors.red,
-    String connectedWebBackgroundHexColor = "#4CAF50",
-    String disconnectedWebBackgroundHexColor = "#F44336",
+    Color connectedToastBackgroundColor = Colors.green,
+    Color disconnectedToastBackgroundColor = Colors.red,
+    String connectedWebToastBackgroundHexColor = "#4CAF50",
+    String disconnectedWebToastBackgroundHexColor = "#F44336",
     ToastGravity toastGravity = ToastGravity.BOTTOM,
     double toastFontSize = 16.0,
     bool showToasts = true,
@@ -73,11 +73,11 @@ class ConnectivityService {
       final String message =
           hasInternet ? connectedToastMessage : disconnectedToastMessage;
       final Color backgroundColor =
-          hasInternet ? connectedBackgroundColor : disconnectedBackgroundColor;
+          hasInternet ? connectedToastBackgroundColor : disconnectedToastBackgroundColor;
 
       final String webBackgroundColor = hasInternet
-          ? connectedWebBackgroundHexColor
-          : disconnectedWebBackgroundHexColor;
+          ? connectedWebToastBackgroundHexColor
+          : disconnectedWebToastBackgroundHexColor;
 
       if (!isFirstRun) {
         if (hasInternet) {

@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  ConnectivityService.startConnectionNotifier();
+  ConnectivityService.startConnectionNotifier(
 
+  );
+  ConnectivityService.connectivityStream.listen((connected) {
+    print('Connectivity: $connected');
+  });
   ///To start the listener without toasts
   // ConnectivityService.startConnectionNotifier(showToasts: false);
 

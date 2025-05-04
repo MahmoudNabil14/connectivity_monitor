@@ -4,15 +4,15 @@ version: 1.0.4
 homepage: "https://github.com/MahmoudNabil14/connectivity_monitor"
 
 environment:
-  sdk: "3.6.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.27.1"
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.2.2
-  fluttertoast: ^8.2.8
-  connectivity_plus: ^6.1.1
+  http: ^1.3.0
+  fluttertoast: ^8.2.12
+  connectivity_plus: ^6.1.4
   rxdart: ^0.28.0
 
 dev_dependencies:
