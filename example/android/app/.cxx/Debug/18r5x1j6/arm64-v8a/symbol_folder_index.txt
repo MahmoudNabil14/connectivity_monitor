@@ -1,0 +1,1 @@
+D:\My flutter projects\connectivity_monitor\example\build\app\intermediates\cxx\Debug\18r5x1j6\obj\arm64-v8a

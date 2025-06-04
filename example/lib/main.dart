@@ -5,7 +5,6 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   ConnectivityService.startConnectionNotifier(
-
   );
   ConnectivityService.connectivityStream.listen((connected) {
     print('Connectivity: $connected');
@@ -27,6 +26,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: ConnectivityMonitor(
+        useWidgetAsConnectivityIndicator: true,
+        useDialogAsConnectivityIndicator: false,
+        customDisconnectedWidget: Scaffold(body: Center(child: Text(" No Internet"),)),
+        connectivityLoadingWidget: Scaffold(body: Center(child: CircularProgressIndicator())),
         child: HomeScreen(),
       ),
     );
@@ -40,7 +43,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Connectivity Monitor Example')),
-      body: Center(child: Text('Home Screen')),
+      body: Center(child: Text('Home Screennnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn')),
     );
   }
 }

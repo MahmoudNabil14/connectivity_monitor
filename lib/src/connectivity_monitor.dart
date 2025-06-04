@@ -19,6 +19,7 @@ class ConnectivityMonitor extends StatefulWidget {
   final Function? onDisconnected; // Callback when disconnected.
   final Function? onConnected; // Callback when connected.
   final Widget? customDialog; // Custom dialog for disconnected state.
+  final Widget? connectivityLoadingWidget; // Custom widget for loading state.
 
   const ConnectivityMonitor({
     super.key,
@@ -30,6 +31,7 @@ class ConnectivityMonitor extends StatefulWidget {
     this.onConnected,
     this.onDisconnected,
     this.customDialog,
+     this.connectivityLoadingWidget,
   });
 
   @override
@@ -38,7 +40,7 @@ class ConnectivityMonitor extends StatefulWidget {
 
 class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
   late StreamSubscription<bool> _connectivitySubscription;
-  bool _isConnected = true;
+  bool? _isConnected;
   bool _isDialogVisible = false;
 
   @override
@@ -71,6 +73,7 @@ class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
     if (_isDialogVisible) {
       Navigator.of(context, rootNavigator: true).pop();
     }
+
     setState(() {
       _isConnected = true;
       _isDialogVisible = false;
@@ -183,8 +186,11 @@ class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
 
   @override
   Widget build(BuildContext context) {
+    if (_isConnected == null) {
+      return widget.connectivityLoadingWidget??widget.child;
+    }
     if (widget.requiresConnection &&
-        !_isConnected &&
+        !_isConnected! &&
         widget.useWidgetAsConnectivityIndicator) {
       return _buildDisconnectedWidget();
     }

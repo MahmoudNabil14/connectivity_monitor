@@ -1,6 +1,6 @@
 name: connectivity_monitor
 description: "A Flutter package to monitor internet connectivity with dynamic UI updates and toast notifications."
-version: 1.0.5
+version: 1.0.6
 homepage: "https://github.com/MahmoudNabil14/connectivity_monitor"
 
 environment:
