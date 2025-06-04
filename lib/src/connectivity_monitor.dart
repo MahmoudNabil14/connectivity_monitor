@@ -55,8 +55,14 @@ class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
     super.dispose();
   }
 
-  void _initializeConnectivity() {
+  void _initializeConnectivity()async {
     if (widget.requiresConnection) {
+      final bool initialStatus = await ConnectivityService.validateInternetConnection();
+      if(initialStatus){
+        _handleWhenConnected();
+      }else{
+        _handleWhenDisconnected();
+      }
       _connectivitySubscription = ConnectivityService.connectivityStream.listen(
         (bool isConnected) {
           if (isConnected) {
