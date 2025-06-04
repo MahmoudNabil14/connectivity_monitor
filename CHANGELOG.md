@@ -1,3 +1,11 @@
+## [1.0.7]
+
+### Changes:
+- Minor bug fix in `connectivityLoadingWidget` parameter.
+- No breaking changes. Safe upgrade from 1.0.6.
+
+---
+
 ## [1.0.6]
 
 ### Changes:
