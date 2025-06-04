@@ -9,6 +9,14 @@
 ## [1.0.6]
 
 ### Changes:
+- Minor bug fix in `connectivityLoadingWidget` parameter.
+- No breaking changes. Safe upgrade from 1.0.6.
+
+---
+
+## [1.0.6]
+
+### Changes:
 - Added `connectivityLoadingWidget` parameter to allow a custom widget while checking connectivity status.
 - Updated Dart SDK constraint to `">=3.6.0 <4.0.0"` to support Dart 3.7.x.
 - No breaking changes. Safe upgrade from 1.0.5.
