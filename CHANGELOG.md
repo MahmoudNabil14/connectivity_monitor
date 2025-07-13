@@ -1,3 +1,12 @@
+## [1.0.8]
+
+### Changes:
+- Fixed null safety issue in dispose method by properly checking if `_connectivitySubscription` is initialized before canceling it.
+- Changed `_connectivitySubscription` from `late` to nullable to prevent potential runtime errors.
+- No breaking changes. Safe upgrade from 1.0.7.
+
+---
+
 ## [1.0.7]
 
 ### Changes:
