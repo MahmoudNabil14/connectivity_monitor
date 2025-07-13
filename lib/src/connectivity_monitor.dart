@@ -39,7 +39,7 @@ class ConnectivityMonitor extends StatefulWidget {
 }
 
 class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
-  late StreamSubscription<bool> _connectivitySubscription;
+  StreamSubscription<bool>? _connectivitySubscription;
   bool? _isConnected;
   bool _isDialogVisible = false;
 
@@ -51,7 +51,7 @@ class _ConnectivityMonitorState extends State<ConnectivityMonitor> {
 
   @override
   void dispose() {
-    _connectivitySubscription.cancel();
+    _connectivitySubscription?.cancel();
     super.dispose();
   }
 
